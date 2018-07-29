@@ -6,6 +6,13 @@
     <string name="search">Search</string>
     <string name="clear">Clear</string>
     <string name="copy">Dipak</string>
+    <string name="player1">Dipak: 0</string>
+    <string name="player2">Roshan: 0</string>
+    <string name="reset">Reset</string>
+    <string name="home">Home</string>
+    <string name="admregister">Admin Register</string>
+    <string name="game">Game</string>
+    <string name="about">About</string>
 
     <array name="speciality">
         <item>ENT</item>

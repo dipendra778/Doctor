@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/home_id"
-        android:title="Home" />
+        android:title="@string/home"
+        />
     <item android:id="@+id/admin_id"
-        android:title="Admin Register"/>
+        android:title="@string/admregister"/>
     <item android:id="@+id/game_id"
-        android:title="Game"/>
+        android:title="@string/game"/>
     <item android:id="@+id/about_id"
-        android:title="About" />
+        android:title="@string/about" />
 
 </menu>

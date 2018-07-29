@@ -62,15 +62,22 @@ public class MainActivity extends AppCompatActivity {
             case R.id.home_id:
                 Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
                 newactivity();
+                break;
+
+            case R.id.game_id:
+                Toast.makeText(this, "Let's Play Game!", Toast.LENGTH_SHORT).show();
+                gameactivity();
+                break;
 
             case R.id.about_id:
                 Toast.makeText(this, "About Clicked", Toast.LENGTH_SHORT).show();
                 newactivity();
+                break;
 
             case R.id.admin_id:
                 Toast.makeText(this, "Register Clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                registeractivity();
+                break;
         }
 
         return true;
@@ -79,7 +86,16 @@ public class MainActivity extends AppCompatActivity {
     public void newactivity() {
         Intent intent = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(intent);
+    }
 
+    public void gameactivity() {
+        Intent intent = new Intent(MainActivity.this, GameActivity.class);
+        startActivity(intent);
+    }
+
+    public void registeractivity() {
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     @Override
