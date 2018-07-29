@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Doctor</string>
+    <string name="name">Doctor Finder</string>
+    <string name="speciality">Speciality</string>
+    <string name="location">Location</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="copy">Dipak</string>
+
+    <array name="speciality">
+        <item>ENT</item>
+        <item>Dermatology</item>
+        <item>Gynoclosist</item>
+        <item>Pedratics</item>
+        <item>Gerneral Medicine</item>
+        <item>Neuro</item>
+        <item>Orthopedics</item>
+    </array>
+</resources>
