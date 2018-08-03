@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#71783c"
+        tools:context=".MainActivity"
+        >
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@color/colorAccent"
+            android:onClick="closekeyboard"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10"
+            android:layout_alignParentBottom="true">
+
+
+            <ImageView
+                android:id="@+id/image_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="#fff"
+                android:onClick="closekeyboard"
+                android:padding="@dimen/dp_10" />
+
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/name"
+                android:textSize="@dimen/dp_30" />
+
+            <AutoCompleteTextView
+                android:id="@+id/et_spec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#d7d7d7"
+                android:hint="@string/speciality"
+                android:padding="@dimen/dp_10" />
+
+            <AutoCompleteTextView
+                android:id="@+id/et_loca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="#d7d7d7"
+                android:hint="@string/location"
+                android:padding="@dimen/dp_10" />
+
+            <Button
+                android:id="@+id/btn_srch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:textSize="@dimen/dp_20" />
+
+            <Button
+                android:id="@+id/btn_clr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/clear"
+                android:textSize="@dimen/dp_20" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationview"
+        style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/drawer_menu">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

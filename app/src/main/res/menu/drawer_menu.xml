@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item android:id="@+id/home"
+        android:title="@string/home">
+    </item>
+    <item android:id="@+id/signin"
+        android:title="@string/signin">
+    </item>
+    <item android:id="@+id/setting"
+        android:title="@string/setting">
+    </item>
+    <item android:id="@+id/logout"
+        android:title="@string/logout">
+    </item>
+
+</group>
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/aboutus"
+            android:title="@string/aboutus">
+        </item>
+        <item android:id="@+id/contactus"
+            android:title="@string/contactus">
+        </item>
+    </group>
+
+
+</menu>
