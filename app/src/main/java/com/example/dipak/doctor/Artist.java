@@ -1,19 +1,19 @@
 package com.example.dipak.doctor;
 
-public class artist {
+public class Artist {
 
     private String name;
-    private String speciality;
+   // private String speciality;
     private String location;
-    private int price;
+    private String price;
     private String availablity;
 
-    public artist(String name, String location, int price, String availablity, String speciality) {
+    public Artist(String name, String location, String price, String availablity) {//, String speciality
         this.name = name;
         this.location = location;
         this.price = price;
         this.availablity = availablity;
-        this.speciality = speciality;
+       // this.speciality = speciality;
     }
 
     public String getName() {
@@ -32,11 +32,11 @@ public class artist {
         this.location = location;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -47,12 +47,12 @@ public class artist {
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
     }
-
+/*
     public String getSpeciality() {
         return speciality;
     }
 
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
-    }
+    }*/
 }

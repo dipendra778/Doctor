@@ -6,6 +6,9 @@
         />
     <item android:id="@+id/admin_id"
         android:title="@string/admregister"/>
+    <item android:id="@+id/view_id"
+        android:title="@string/viewDetails"/>
+
     <item android:id="@+id/game_id"
         android:title="@string/game"/>
     <item android:id="@+id/about_id"

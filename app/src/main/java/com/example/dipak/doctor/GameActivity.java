@@ -43,6 +43,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
 
+                reset();
             }
         });
     }
@@ -118,7 +119,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player1Wins() {
         player1Points++;
-        Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Er Dipak Pant Won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
 
@@ -126,7 +127,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player2Wins() {
         player2Points++;
-        Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Er Roshan Pujara Won!", Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
@@ -136,8 +137,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         resetBoard();
     }
     private void updatePointsText() {
-        textViewPlayer1.setText("Player 1: " + player1Points);
-        textViewPlayer2.setText("Player 2: " + player2Points);
+        textViewPlayer1.setText("Dipak : " + player1Points);
+        textViewPlayer2.setText("Roshan : " + player2Points);
     }
 
     private void resetBoard() {
@@ -149,6 +150,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         roundCount = 0;
         player1Turn = true;
+    }
+
+    private void reset()
+    {
+     player1Points=0;
+     player2Points=0;
+     updatePointsText();
+     resetBoard();
     }
 
 }

@@ -7,14 +7,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
+
+    /*
+    <Spinner
+        android:id="@+id/spinner_spe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/speciality"
+        android:dropDownWidth="wrap_content"
+        android:layout_weight="1"
+        />*/
     private EditText name, location, price, aviablity;
     private Button insert;
-    private Spinner speciality;
+   // private Spinner speciality;
     DatabaseReference reference;
 
     @Override
@@ -26,14 +37,23 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         init();
         setlistner();
+
+
     }
 
+    public void clearboxes()
+    {
+        name.setText("");
+        location.setText("");
+        price.setText("");
+        aviablity.setText("");
+    }
     private void init() {
         name = (EditText) findViewById(R.id.edittext_name);
         location = (EditText) findViewById(R.id.edittext_location);
         price = (EditText) findViewById(R.id.edittext_price);
         aviablity = (EditText) findViewById(R.id.edittext_aviablity);
-        speciality = (Spinner) findViewById(R.id.spinner_spe);
+     //   speciality = (Spinner) findViewById(R.id.spinner_spe);
         insert = (Button) findViewById(R.id.button);
 
 
@@ -45,21 +65,22 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.button:
-                artist ar=new artist(name.getText().toString().trim(),location.getText().toString().trim(),Integer.parseInt(price.getText().toString().trim()), aviablity.getText().toString().trim(),speciality.getSelectedItem().toString().trim());
-                saveData(ar);
-                Toast.makeText(this,"Inserted Successfully",Toast.LENGTH_LONG).show();
+                Artist artist = new Artist(name.getText().toString().trim(), location.getText().toString().trim(), price.getText().toString().trim(), aviablity.getText().toString().trim());
+//, speciality.getSelectedItem().toString().trim()
+                saveData(artist);
+                Toast.makeText(this, "Inserted Successfully", Toast.LENGTH_LONG).show();
+                clearboxes();
                 break;
         }
 
     }
 
-    private void saveData(artist ar) {
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-        DatabaseReference myRef=database.getReference("details");
-        myRef.push().setValue(ar);
+    private void saveData(Artist artist) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("details");
+        myRef.push().setValue(artist);
 
     }
 }

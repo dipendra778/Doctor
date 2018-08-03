@@ -13,6 +13,21 @@
     <string name="admregister">Admin Register</string>
     <string name="game">Game</string>
     <string name="about">About</string>
+    <string name="doctorfinder">Doctor FInder</string>
+    <string name="website">www.doctorfinder.com</string>
+    <string name="signin">Sign In</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Log Out</string>
+    <string name="aboutus">About Us</string>
+    <string name="contactus">Contact Us</string>
+    <string name="Rs"></string>
+    <string name="viewDetails">View Details</string>
+    <string name="specialist">Specialist</string>
+    <string name="Name">Name</string>
+    <string name="docLocation">Location</string>
+    <string name="docPrice">Price</string>
+    <string name="docAvailablity">Availablity</string>
+    <string name="btnInsert">Insert</string>
 
     <array name="speciality">
         <item>ENT</item>

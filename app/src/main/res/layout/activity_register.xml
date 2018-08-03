@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,47 +10,37 @@
         android:id="@+id/edittext_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="@string/Name"
         android:layout_weight="1"
         android:inputType="text"
         />
-
-    <Spinner
-        android:id="@+id/spinner_spe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/speciality"
-        android:dropDownWidth="wrap_content"
-        android:layout_weight="1"
-        />
-
 
     <EditText
         android:id="@+id/edittext_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Location"
+        android:hint="@string/docLocation"
         android:layout_weight="1"
         android:inputType="text"/>
     <EditText
         android:id="@+id/edittext_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Price"
+        android:hint="@string/docPrice"
         android:layout_weight="1"
-        android:inputType="number"/>
+        android:inputType="text"/>
     <EditText
         android:id="@+id/edittext_aviablity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Aviablity"
+        android:hint="@string/docAvailablity"
         android:layout_weight="1"
         android:inputType="text"/>
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Insert"
+        android:hint="@string/btnInsert"
         android:layout_weight="1"/>
 
 
