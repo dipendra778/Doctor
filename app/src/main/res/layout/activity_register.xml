@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docPhone"
-        android:inputType="number" />
+        android:inputType="phone" />
 
 
     <EditText
@@ -70,4 +70,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/btnInsert" />
+    <Button
+
+        android:id="@+id/email_sign_out_button"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_out"
+        android:textStyle="bold"/>
 </LinearLayout>

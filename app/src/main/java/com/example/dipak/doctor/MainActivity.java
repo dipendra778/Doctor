@@ -179,20 +179,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.about_id:
                 Toast.makeText(this, "About Clicked", Toast.LENGTH_SHORT).show();
-                newactivity();
+                aboutactivity();
                 break;
 
-            case R.id.admin_id:
-                Toast.makeText(this, "Register Clicked", Toast.LENGTH_SHORT).show();
-                registeractivity();
-                break;
         }
 
         return true;
     }
 //Intents for activity
     public void newactivity() {
-        Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -201,8 +197,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-    public void registeractivity() {
-        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+    public void aboutactivity() {
+        Intent intent = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(intent);
     }
 
@@ -248,6 +244,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
             Toast.makeText(this, "Sign In ", Toast.LENGTH_SHORT);
         }
+        else if (id == R.id.news) {
+            Intent intent = new Intent(this, NewsActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "News! ", Toast.LENGTH_SHORT);
+        }
+
 
         return false;
     }

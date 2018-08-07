@@ -20,13 +20,12 @@
     <string name="logout">Log Out</string>
     <string name="aboutus">About Us</string>
     <string name="contactus">Contact Us</string>
-    <string name="Rs"></string>
     <string name="viewDetails">View Details</string>
     <string name="specialist">Specialist</string>
     <string name="Name">Name</string>
     <string name="docLocation">Location</string>
     <string name="docPrice">Price</string>
-    <string name="docAvailablity">Availablity</string>
+    <string name="docAvailablity">Availability</string>
     <string name="btnInsert">Insert</string>
     <string name="share">Share</string>
     <string name="viewdetail">View Detail</string>
@@ -38,6 +37,10 @@
     <string name="prompt_email">Email</string>
     <string name="sign">SIgn In</string>
     <string name="btnsignout">Sign Out</string>
+    <string name="news">News</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_out">Sign Out</string>
 
     <array name="speciality">
         <item>ENT</item>
