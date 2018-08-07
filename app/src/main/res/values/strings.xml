@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Doctor</string>
     <string name="name">Doctor Finder</string>
-    <string name="speciality">Speciality</string>
-    <string name="location">Location</string>
+    <string name="speciality"> Speciality</string>
+    <string name="location"> Location</string>
     <string name="search">Search</string>
     <string name="clear">Clear</string>
     <string name="copy">Dipak</string>
@@ -14,7 +14,7 @@
     <string name="game">Game</string>
     <string name="about">About</string>
     <string name="doctorfinder">Doctor FInder</string>
-    <string name="website">www.doctorfinder.com</string>
+    <string name="info">An Android app</string>
     <string name="signin">Sign In</string>
     <string name="setting">Setting</string>
     <string name="logout">Log Out</string>
@@ -28,6 +28,10 @@
     <string name="docPrice">Price</string>
     <string name="docAvailablity">Availablity</string>
     <string name="btnInsert">Insert</string>
+    <string name="share">Share</string>
+    <string name="viewdetail">View Detail</string>
+    <string name="an_android_app">An Android app</string>
+    <string name="doctor_finder">Doctor Finder</string>
 
     <array name="speciality">
         <item>ENT</item>

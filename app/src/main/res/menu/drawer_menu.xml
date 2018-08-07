@@ -1,29 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-<group android:checkableBehavior="single">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<group android:checkableBehavior="single"
+    android:id="@+id/group1">
+
     <item android:id="@+id/home"
-        android:title="@string/home">
+        android:title="@string/home"
+        android:icon="@drawable/home"
+        >
     </item>
     <item android:id="@+id/signin"
-        android:title="@string/signin">
+        android:title="@string/signin"
+        android:icon="@drawable/signin"
+        >
+    </item>
+    <item android:id="@+id/viewdetail"
+        android:title="@string/viewdetail"
+        android:icon="@drawable/detail"
+        >
     </item>
     <item android:id="@+id/setting"
-        android:title="@string/setting">
+        android:title="@string/setting"
+        android:icon="@drawable/ic_settings_black_24dp"
+        >
     </item>
-    <item android:id="@+id/logout"
-        android:title="@string/logout">
-    </item>
+
 
 </group>
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
         <item android:id="@+id/aboutus"
-            android:title="@string/aboutus">
+            android:title="@string/aboutus"
+            android:icon="@drawable/aboutus"
+            >
         </item>
         <item android:id="@+id/contactus"
-            android:title="@string/contactus">
+            android:title="@string/contactus"
+            android:icon="@drawable/contact"
+           >
         </item>
     </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group3">
+        <item android:id="@+id/share"
+            android:title="@string/share"
+            android:icon="@drawable/share"
+            >
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group4">
+    <item android:id="@+id/logout"
+        android:title="@string/logout"
+        android:icon="@drawable/logout"
+        >
+    </item>
+    </group>
+
+
 
 
 </menu>

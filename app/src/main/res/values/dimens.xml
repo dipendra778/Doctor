@@ -4,4 +4,7 @@
     <dimen name="dp_30">30dp</dimen>
     <dimen name="dp_20">20dp</dimen>
     <dimen name="sp_20">20sp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_310">310dp</dimen>
 </resources>

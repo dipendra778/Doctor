@@ -21,7 +21,7 @@ import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SplashTime = 4000;
+    private final int SplashTime = 2000;
     private List<Product> productList;
 
     @Override
@@ -31,7 +31,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ImageView imageView = findViewById(R.id.imageView);
-        TextView textView = findViewById(R.id.textView);
+        TextView textView1 = findViewById(R.id.textView1);
+        TextView textView2=findViewById(R.id.textView2);
 
         new Handler().postDelayed(new Runnable() {
             @Override
