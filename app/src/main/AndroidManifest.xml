@@ -22,19 +22,21 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".RecyclerActivity"
+            android:name=".Recycler.RecyclerActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Register.RegisterActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".GameActivity"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".GameActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Signin.SigninActivity" />
+        <activity android:name=".SigninActivity"></activity>
     </application>
 
 </manifest>

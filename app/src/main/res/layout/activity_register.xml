@@ -4,44 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Register.RegisterActivity">
+
     <EditText
         android:id="@+id/edittext_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/Name"
         android:layout_weight="1"
-        android:inputType="text"
-        />
+        android:hint="@string/Name"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/edittext_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/docLocation"
         android:layout_weight="1"
-        android:inputType="text"/>
+        android:hint="@string/docLocation"
+        android:inputType="text" />
+
     <EditText
         android:id="@+id/edittext_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/docPrice"
         android:layout_weight="1"
-        android:inputType="text"/>
+        android:hint="@string/docPrice"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/spinner_spe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/speciality" />
+
     <EditText
         android:id="@+id/edittext_aviablity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/docAvailablity"
         android:layout_weight="1"
-        android:inputType="text"/>
+        android:hint="@string/docAvailablity"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edittext_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/docPhone"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/edittext_Hospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/docHospital"
+        android:inputType="text" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/btnInsert"
-        android:layout_weight="1"/>
-
-
+        android:layout_weight="1"
+        android:hint="@string/btnInsert" />
 </LinearLayout>

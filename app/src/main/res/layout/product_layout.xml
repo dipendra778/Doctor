@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:id="@+id/relative_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
-        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true">
+        android:layout_margin="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -18,42 +20,74 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
-                android:layout_height="90dp"
+                android:layout_height="165dp"
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/textViewTitle"
-                android:layout_toRightOf="@id/imageView"
+                android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+                android:layout_toRightOf="@id/imageView"
+                android:text="@string/Name"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
-                android:id="@+id/textViewShortDesc"
+                android:id="@+id/textViewLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewName"
+                android:layout_toRightOf="@id/imageView"
                 android:text="Location"
-                android:layout_below="@id/textViewTitle"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:layout_toRightOf="@id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textViewRating"
-                android:layout_below="@id/textViewShortDesc"
-                android:text="Price"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:layout_toRightOf="@id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/textViewPrice"
-                android:text="Availablity"
-                android:layout_below="@id/textViewRating"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:layout_toRightOf="@id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/textViewLocation"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Price"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewAvail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewPrice"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Availablity"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewAvail"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Phone"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/textViewHospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewPhone"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Hospital"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewHospital"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Speciality"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textStyle="bold" />
 
         </RelativeLayout>

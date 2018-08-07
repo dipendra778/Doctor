@@ -1,4 +1,4 @@
-package com.example.dipak.doctor;
+package com.example.dipak.doctor.Recycler;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.dipak.doctor.R;
 
 import java.util.List;
 
@@ -32,11 +35,17 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
         Product product = productList.get(position);
+        holder.textViewname.setText(product.getName());
+        holder.textViewlocation.setText(product.getLocation());
+        holder.textviewprice.setText(product.getPrice());
+        String phone= String.valueOf(product.getPhone());
+        holder.textviewphone.setText(phone);
+        holder.textViewavail.setText(product.getAvailablity());
+        holder.textviewhospital.setText(product.getHospital());
 
-        holder.textViewTitle.setText(product.getName());
-        holder.textViewShortDesc.setText(product.getLocation());
-        holder.textviewPrice.setText(product.getPrice());
-        holder.textViewRating.setText(product.getAvailablity());
+
+        holder.spinnerspeciality.setText(product.getSpeciality());
+
 //        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage(), null));
     }
 
@@ -48,16 +57,21 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textViewTitle, textViewShortDesc, textViewRating, textviewPrice;
+        TextView textViewname, textViewlocation, textviewphone, textviewprice, textViewavail, textviewhospital,spinnerspeciality;
+
 
         public ProductViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewRating = itemView.findViewById(R.id.textViewRating);
-            textviewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewname = itemView.findViewById(R.id.textViewName);
+            textViewlocation = itemView.findViewById(R.id.textViewLocation);
+            textViewavail = itemView.findViewById(R.id.textViewAvail);
+            textviewprice = itemView.findViewById(R.id.textViewPrice);
+            textviewphone = itemView.findViewById(R.id.textViewPhone);
+            textviewhospital = itemView.findViewById(R.id.textViewHospital);
+            spinnerspeciality = itemView.findViewById(R.id.textViewSpinner);
+
 
         }
     }

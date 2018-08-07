@@ -32,6 +32,12 @@
     <string name="viewdetail">View Detail</string>
     <string name="an_android_app">An Android app</string>
     <string name="doctor_finder">Doctor Finder</string>
+    <string name="docPhone">Phone</string>
+    <string name="docHospital">Hospital</string>
+    <string name="action_sign_in_short">Email</string>
+    <string name="prompt_email">Email</string>
+    <string name="sign">SIgn In</string>
+    <string name="btnsignout">Sign Out</string>
 
     <array name="speciality">
         <item>ENT</item>

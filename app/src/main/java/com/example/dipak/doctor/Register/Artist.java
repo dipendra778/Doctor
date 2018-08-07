@@ -1,21 +1,23 @@
-package com.example.dipak.doctor;
+package com.example.dipak.doctor.Register;
 
-public class Product {
+public class Artist {
 
     private String name;
+    private String speciality;
     private String location;
+    private int phone;
+    private String hospital;
     private String price;
     private String availablity;
 
-    public Product(){
-
-    }
-
-    public Product(String name, String location, String price, String availablity) {
+    public Artist(String name, String location, String price, String availablity, String speciality, int phone, String hospital) {
         this.name = name;
         this.location = location;
         this.price = price;
         this.availablity = availablity;
+        this.speciality = speciality;
+        this.phone = phone;
+        this.hospital = hospital;
     }
 
     public String getName() {
@@ -48,5 +50,29 @@ public class Product {
 
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
     }
 }

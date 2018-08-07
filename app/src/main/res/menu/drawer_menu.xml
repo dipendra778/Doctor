@@ -9,8 +9,8 @@
         android:icon="@drawable/home"
         >
     </item>
-    <item android:id="@+id/signin"
-        android:title="@string/signin"
+    <item android:id="@+id/game_id"
+        android:title="@string/game"
         android:icon="@drawable/signin"
         >
     </item>
@@ -19,8 +19,8 @@
         android:icon="@drawable/detail"
         >
     </item>
-    <item android:id="@+id/setting"
-        android:title="@string/setting"
+    <item android:id="@+id/signin"
+        android:title="@string/sign"
         android:icon="@drawable/ic_settings_black_24dp"
         >
     </item>

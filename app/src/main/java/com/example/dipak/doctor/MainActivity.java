@@ -15,11 +15,13 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.dipak.doctor.Recycler.Product;
+import com.example.dipak.doctor.Recycler.RecyclerActivity;
+import com.example.dipak.doctor.Register.RegisterActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     AutoCompleteTextView speciality, location;
     private List<Product> productList;
     ViewFlipper viewFlipper;
-
 
 
     public static void start(Context context, String productList) {
@@ -54,20 +55,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         //Imagae at top slideshow
-        viewFlipper=findViewById(R.id.photo_fliper);
+        viewFlipper = findViewById(R.id.photo_fliper);
 
 
-        int images[] = {R.drawable.flipper1,R.drawable.flipper2,R.drawable.flipper3,
-                R.drawable.flipper4,R.drawable.flipper5,R.drawable.flipper6};
+        int images[] = {R.drawable.flipper1, R.drawable.flipper2, R.drawable.flipper3,
+                R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
       /* for(int i=0; i< image.length; i++){
              filpperImages(image[i]);
         }*/
-        for(int image:images){
+        for (int image : images) {
             flipperImages(image);
-            }
+        }
         //Navigation items ko lai
-        NavigationView navigationView=findViewById(R.id.navigationview);
+        NavigationView navigationView = findViewById(R.id.navigationview);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -126,8 +127,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    public void flipperImages(int images){
-        ImageView imageView=new ImageView(this);
+    public void flipperImages(int images) {
+        ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(images);
 
         viewFlipper.addView(imageView);
@@ -138,7 +139,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
     }
-
 
 
     private void setUpToolbar() {
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-
+//Left SIde 3 dot menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return true;
     }
-
+//Intents for activity
     public void newactivity() {
         Intent intent = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(intent);
@@ -215,32 +215,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         super.onBackPressed();
     }
-
+//CLoses soft keyboard
     public void closekeyboard(View view) {
 
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-
+//Navigation bar item selection and intent
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id==R.id.home){
-            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+        if (id == R.id.home) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent);
-            Toast.makeText(this,"You are in Home",Toast.LENGTH_SHORT).show();
-        }
-        else if(id==R.id.signin){
-            Intent intent = new Intent(this,MainActivity.class);
+            Toast.makeText(this, "You are in Home", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.game_id) {
+            Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);
-            Toast.makeText(this,"This is Sign in",Toast.LENGTH_SHORT).show();
-        }
-        else if(id==R.id.aboutus){
-            Intent intent = new Intent(this,AboutActivity.class);
+            Toast.makeText(this, "This is Game", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.aboutus) {
+            Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
-            Toast.makeText(this,"Aboutus Opened",Toast.LENGTH_SHORT);
+            Toast.makeText(this, "About Us", Toast.LENGTH_SHORT);
+        } else if (id == R.id.viewdetail) {
+            Intent intent = new Intent(this, RecyclerActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
         }
+        else if (id == R.id.signin) {
+            Intent intent = new Intent(this, SigninActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Sign In ", Toast.LENGTH_SHORT);
+        }
+
         return false;
     }
 }

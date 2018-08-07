@@ -1,10 +1,12 @@
-package com.example.dipak.doctor;
+package com.example.dipak.doctor.Recycler;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.dipak.doctor.MainActivity;
+import com.example.dipak.doctor.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,6 +63,5 @@ public class RecyclerActivity extends AppCompatActivity {
     }
 
     public static void start(MainActivity mainActivity, String s) {
-
     }
 }
