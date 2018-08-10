@@ -36,7 +36,8 @@
             android:name=".GameActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".SigninActivity" />
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".DisplayActivity"></activity>
     </application>
 
 </manifest>

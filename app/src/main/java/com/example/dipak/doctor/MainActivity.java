@@ -9,10 +9,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +23,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.dipak.doctor.Recycler.Product;
+import com.example.dipak.doctor.Recycler.ProductsAdapter;
 import com.example.dipak.doctor.Recycler.RecyclerActivity;
 import com.example.dipak.doctor.Register.RegisterActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -41,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     AutoCompleteTextView speciality, location;
     private List<Product> productList;
     ViewFlipper viewFlipper;
+    private ArrayList<String> listLocation;
+    private ArrayList<String> listSpeciality;
+    private String filterLocation, filterSpeciality;
 
 
     public static void start(Context context, String productList) {
@@ -57,7 +64,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Imagae at top slideshow
         viewFlipper = findViewById(R.id.photo_fliper);
 
-
+        listLocation = new ArrayList<>();
+        listSpeciality = new ArrayList<>();
         int images[] = {R.drawable.flipper1, R.drawable.flipper2, R.drawable.flipper3,
                 R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
@@ -83,17 +91,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setUpToolbar();
         productList = new ArrayList<>();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
-
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()) {
-
                     for (DataSnapshot productSnapshot : dataSnapshot.getChildren()) {
                         Product p = productSnapshot.getValue(Product.class);
-                        productList.add(p);
+                        String location = p.getLocation();
+                        listLocation.add(location);
+                        String speciality = p.getSpeciality();
+                        listSpeciality.add(speciality);
                     }
                 }
 
@@ -104,10 +113,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-
         Gson gson = new Gson();
 
-        RecyclerActivity.start(this, gson.toJson(productList));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, listLocation);
+        location.setThreshold(1); //will start working from first character
+        location.setAdapter(adapter);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, listSpeciality);
+        speciality.setThreshold(1); //will start working from first character
+        speciality.setAdapter(adapter1);
+
+        speciality.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("", "SELECTED speciality TEXT WAS------->" + listSpeciality.get(i));
+                filterSpeciality = listSpeciality.get(i);
+            }
+        });
+        location.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                filterLocation = listLocation.get(i);
+                Log.i("", "SELECTED location TEXT WAS------->" + listLocation.get(i));
+            }
+        });
+
+
+//        RecyclerActivity.start(this, gson.toJson(productList));
+
+
+        //Button Search and Clear Work
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
+                RecyclerActivity.start(MainActivity.this, filterLocation,filterSpeciality);
                 startActivity(intent);
             }
         });
@@ -156,7 +193,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-//Left SIde 3 dot menu
+
+    //Left SIde 3 dot menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -186,7 +224,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return true;
     }
-//Intents for activity
+
+    //Intents for activity
     public void newactivity() {
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         startActivity(intent);
@@ -211,14 +250,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         super.onBackPressed();
     }
-//CLoses soft keyboard
+
+    //CLoses soft keyboard
     public void closekeyboard(View view) {
 
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-//Navigation bar item selection and intent
+    //Navigation bar item selection and intent
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -238,13 +278,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, RecyclerActivity.class);
             startActivity(intent);
             Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
-        }
-        else if (id == R.id.signin) {
+        } else if (id == R.id.signin) {
             Intent intent = new Intent(this, SigninActivity.class);
             startActivity(intent);
             Toast.makeText(this, "Sign In ", Toast.LENGTH_SHORT);
-        }
-        else if (id == R.id.news) {
+        } else if (id == R.id.news) {
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);
             Toast.makeText(this, "News! ", Toast.LENGTH_SHORT);
