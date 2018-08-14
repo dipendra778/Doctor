@@ -28,16 +28,22 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Register.RegisterActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".GameActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".SigninActivity" />
-        <activity android:name=".NewsActivity" />
-        <activity android:name=".DisplayActivity"></activity>
+        <activity android:name=".NewsActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".DisplayActivity" />
+        <activity android:name=".Emergency.EmergencyActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Emergency.EdisplayActivity"></activity>
     </application>
 
 </manifest>

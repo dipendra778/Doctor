@@ -14,6 +14,9 @@ public class NewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+
+        getSupportActionBar().setTitle("News Portal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView1=findViewById(R.id.news_img_1);
         imageView2=findViewById(R.id.news_img_2);
         imageView3=findViewById(R.id.news_img_3);

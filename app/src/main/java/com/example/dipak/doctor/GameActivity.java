@@ -26,6 +26,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        getSupportActionBar().setTitle("Game");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
 

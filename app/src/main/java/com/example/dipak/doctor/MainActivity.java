@@ -22,10 +22,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.dipak.doctor.Emergency.EmergencyActivity;
 import com.example.dipak.doctor.Recycler.Product;
-import com.example.dipak.doctor.Recycler.ProductsAdapter;
 import com.example.dipak.doctor.Recycler.RecyclerActivity;
-import com.example.dipak.doctor.Register.RegisterActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -286,6 +285,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);
             Toast.makeText(this, "News! ", Toast.LENGTH_SHORT);
+        }
+        else if (id == R.id.emergency) {
+            Intent intent = new Intent(this, EmergencyActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Emergency! ", Toast.LENGTH_SHORT);
         }
 
 

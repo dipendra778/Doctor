@@ -61,7 +61,7 @@ public class RecyclerActivity extends AppCompatActivity {
 
     private Product getInfo(final String speciality, String location) {
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        Query query = database.child("details").orderByChild(speciality);
+        Query query = database.child("details").orderByChild("speciality").startAt(speciality).endAt(speciality);
         final List<Product> connectedProduct = new ArrayList<>();
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
