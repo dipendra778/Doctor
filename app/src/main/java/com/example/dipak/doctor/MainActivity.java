@@ -29,7 +29,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -37,7 +39,8 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseDatabase mFirebaseDatabase;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -68,9 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int images[] = {R.drawable.flipper1, R.drawable.flipper2, R.drawable.flipper3,
                 R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
-      /* for(int i=0; i< image.length; i++){
-             filpperImages(image[i]);
-        }*/
         for (int image : images) {
             flipperImages(image);
         }

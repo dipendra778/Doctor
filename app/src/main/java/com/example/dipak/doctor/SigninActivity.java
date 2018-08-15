@@ -28,6 +28,9 @@ public class SigninActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+        getSupportActionBar().setTitle("Sign In");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //declare buttons and edit texts in oncreate
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);

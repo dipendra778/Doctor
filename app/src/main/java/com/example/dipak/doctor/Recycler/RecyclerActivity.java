@@ -41,6 +41,8 @@ public class RecyclerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
 
+        getSupportActionBar().setTitle("Doctors Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -49,29 +51,30 @@ public class RecyclerActivity extends AppCompatActivity {
         productList = new ArrayList<>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
-//        if (getIntent().getExtras() != null) {
-//        Bundle extras = getIntent().getExtras();
-//        location = extras.getString("location");
-//        speciality = extras.getString("speciality");
-//        }
+        Query query = reference.child("details").orderByChild("speciality").startAt(speciality).endAt(speciality);
+        if (getIntent().getExtras() != null) {
+            Bundle extras = getIntent().getExtras();
+            location = extras.getString("location");
+            speciality = extras.getString("speciality");
+        }
 
-        Product filteredData = getInfo("ENT", location);
-
-    }
-
-    private Product getInfo(final String speciality, String location) {
-        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        Query query = database.child("details").orderByChild("speciality").startAt(speciality).endAt(speciality);
-        final List<Product> connectedProduct = new ArrayList<>();
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener()
+         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if (dataSnapshot.exists()) {
-                    for (DataSnapshot details : dataSnapshot.getChildren()) {
-                        Product user = details.getValue(Product.class);
-                        connectedProduct.add(user);
+
+                    for (DataSnapshot productSnapshot : dataSnapshot.getChildren()) {
+                        Product p = productSnapshot.getValue(Product.class);
+                        productList.add(p);
                     }
+
+                    adapter = new ProductsAdapter(RecyclerActivity.this, productList);
+                    recyclerView.setAdapter(adapter);
+
                 }
+
             }
 
             @Override
@@ -79,8 +82,9 @@ public class RecyclerActivity extends AppCompatActivity {
 
             }
         });
-        return connectedProduct.get(0);
+
     }
+
 
 
 }
