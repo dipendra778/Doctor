@@ -17,10 +17,10 @@ import com.example.dipak.doctor.R;
 
 public class EmergencyActivity extends AppCompatActivity {
 
-    int[] images = {R.drawable.seti, R.drawable.mahakali, R.drawable.patan, R.drawable.accham, R.drawable.bajura, R.drawable.doti, R.drawable.dadeldhura};//
-    String[] name = {"Seti Zonal Hospital", "Mahakali Zonal Hospital", "Patan Hospital Baitadi","Accham District Hospital","Bajura District Hospital","Doti District Hospital","Dadeldhura Hospital"};
-    String[] details = {"Kailali,Dhangadhi", "Mahendranagar,Kanchanpur", "Baitadi,Patan","Accham,Mangalsen","Bajra,Martadi","Doti,Silgadi","Dadeldhura,Tufandada"};
-    String[] phone = {"091-521271", "094-526645", "099-426645","091-521271", "094-526645", "099-426645","091-523312"};
+    int[] images = {R.drawable.ambulance,R.drawable.seti, R.drawable.mahakali, R.drawable.patan, R.drawable.accham, R.drawable.bajura, R.drawable.doti, R.drawable.dadeldhura};//
+    String[] name = {"Nepal Red Cross Society Ambulance","Seti Zonal Hospital", "Mahakali Zonal Hospital", "Patan Hospital Baitadi","Accham District Hospital","Bajura District Hospital","Doti District Hospital","Dadeldhura Hospital"};
+    String[] details = {"Dhangadhi,Kailali","Kailali,Dhangadhi", "Mahendranagar,Kanchanpur", "Baitadi,Patan","Accham,Mangalsen","Bajra,Martadi","Doti,Silgadi","Dadeldhura,Tufandada"};
+    String[] phone = {"091-521600","091-521271", "094-526645", "099-426645","091-521271", "094-526645", "099-426645","091-523312"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

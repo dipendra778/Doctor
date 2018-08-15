@@ -17,7 +17,10 @@ public class EdisplayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display);
+        setContentView(R.layout.activity_edisplay);
+
+        getSupportActionBar().setTitle("Emergency");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView=findViewById(R.id.imageView);
         nametext=findViewById(R.id.name);
         detaitext=findViewById(R.id.detail);
