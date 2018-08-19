@@ -49,6 +49,7 @@
             android:textSize="@dimen/sp_20"
             android:textColorHint="@color/hintEditText"
             android:background="@drawable/shape_et"
+
             />
 
         <AutoCompleteTextView
@@ -66,7 +67,8 @@
             android:hint="@string/location"
             android:textSize="@dimen/sp_20"
             android:textColorHint="@color/hintEditText"
-            android:background="@drawable/shape_et"/>
+            android:background="@drawable/shape_et"
+            />
 
         <Button
             android:layout_marginTop="@dimen/dp_60"

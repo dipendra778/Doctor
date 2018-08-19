@@ -9,13 +9,14 @@ public class Product {
     private String hospital;
     private long phone;
     private String speciality;
+    private String email;
 
 
     public Product() {
 
     }
 
-    public Product(String name, String location, String price, String availablity, String speciality, long phone, String hospital) {
+    public Product(String name, String location, String price, String availablity, String speciality, long phone, String hospital,String email) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -23,6 +24,7 @@ public class Product {
         this.speciality = speciality;
         this.phone = phone;
         this.hospital = hospital;
+        this.email=email;
     }
 
     public String getName() {
@@ -82,4 +84,11 @@ public class Product {
         this.speciality = speciality;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

@@ -10,12 +10,12 @@
         android:id="@+id/news_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:weightSum="3">
 
         <ImageView
             android:id="@+id/news_img_1"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/news_gorkhapatra"
@@ -23,7 +23,7 @@
 
         <ImageView
             android:id="@+id/news_img_2"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/news_kantipur"
@@ -35,110 +35,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/news_annapurna"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/news_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
         <ImageView
-            android:id="@+id/new_img_1"
-            android:layout_width="wrap_content"
+            android:id="@+id/news_img_4"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/new_img_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/new_img_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ne_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <ImageView
-            android:id="@+id/news_im_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_im_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_im_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/news_ll2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <ImageView
-            android:id="@+id/news_imag_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_imag_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_imag_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/news_ll3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <ImageView
-            android:id="@+id/news_image_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_image_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/news_image_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/dinesh"
+            />
     </LinearLayout>
 
 </RelativeLayout>

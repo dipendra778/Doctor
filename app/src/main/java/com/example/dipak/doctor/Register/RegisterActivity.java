@@ -23,7 +23,7 @@ import com.example.dipak.doctor.Register.Artist;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "RegisterActivity";
-    private EditText name, location, price, aviablity, phone, hospital;
+    private EditText name, location, price, aviablity, phone, hospital,email;
     private Button insert;
     private Spinner speciality;
     FirebaseAuth mAuth;
@@ -100,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         aviablity.setText("");
         phone.setText("");
         hospital.setText("");
+       email.setText("");
     }
 
     private void init() {
@@ -111,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         insert = findViewById(R.id.button);
         phone = findViewById(R.id.edittext_phone);
         hospital = findViewById(R.id.edittext_Hospital);
+        email = findViewById(R.id.edittext_Email);
 
 
     }
@@ -123,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
-                Artist artist = new Artist(name.getText().toString().trim(), location.getText().toString().trim(), price.getText().toString().trim(), aviablity.getText().toString().trim(), speciality.getSelectedItem().toString().trim(), Integer.parseInt(phone.getText().toString().trim()), hospital.getText().toString().trim());
+                Artist artist = new Artist(name.getText().toString().trim(), location.getText().toString().trim(), price.getText().toString().trim(), aviablity.getText().toString().trim(), speciality.getSelectedItem().toString().trim(), Integer.parseInt(phone.getText().toString().trim()), hospital.getText().toString().trim(),email.getText().toString().trim());
                 saveData(artist);
                 Toast.makeText(this, "Inserted Successfully", Toast.LENGTH_LONG).show();
                 clearboxes();

@@ -45,6 +45,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
 
         holder.spinnerspeciality.setText(product.getSpeciality());
+      //  holder.textViewemail.setText(product.getEmail());
 
 //        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(product.getImage(), null));
     }
@@ -57,7 +58,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView textViewname, textViewlocation, textviewphone, textviewprice, textViewavail, textviewhospital,spinnerspeciality;
+        TextView textViewname, textViewlocation, textviewphone, textviewprice, textViewavail, textviewhospital,spinnerspeciality,textViewemail;
 
 
         public ProductViewHolder(View itemView) {
@@ -71,6 +72,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
             textviewphone = itemView.findViewById(R.id.textViewPhone);
             textviewhospital = itemView.findViewById(R.id.textViewHospital);
             spinnerspeciality = itemView.findViewById(R.id.textViewSpinner);
+            textViewemail=itemView.findViewById(R.id.edittext_Email);
 
 
         }

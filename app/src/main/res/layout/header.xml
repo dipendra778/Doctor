@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/info"
+        android:text="@string/inform"
         android:textSize="20sp"
         android:layout_marginLeft="35dp"
         android:textColor="#504f4f"/>

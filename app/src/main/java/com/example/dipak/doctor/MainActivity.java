@@ -204,8 +204,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 newactivity();
                 break;
 
-            case R.id.view_id:
-                Toast.makeText(this, "View Details", Toast.LENGTH_SHORT).show();
+            case R.id.sendmail:
+                Toast.makeText(this, "Send Mail", Toast.LENGTH_SHORT).show();
                 viewactivity();
                 break;
 
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void viewactivity() {
-        Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
+        Intent intent = new Intent(MainActivity.this, SendMainActivity.class);
         startActivity(intent);
     }
 

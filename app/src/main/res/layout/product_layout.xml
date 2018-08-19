@@ -89,6 +89,15 @@
                 android:text="Speciality"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewSpinner"
+                android:layout_toRightOf="@id/imageView"
+                android:text="Email"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

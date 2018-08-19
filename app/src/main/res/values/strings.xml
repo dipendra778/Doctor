@@ -42,6 +42,13 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_out">Sign Out</string>
     <string name="emergency">Emergency Phone Numbers</string>
+    <string name="sendmail">Send Mail</string>
+    <string name="sendmai">Send</string>
+    <string name="Messege">Message</string>
+    <string name="subject">Subject</string>
+    <string name="to">To</string>
+    <string name="docEmail">Email</string>
+    <string name="inform">An Online Android App</string>
 
     <array name="speciality">
         <item>ENT</item>

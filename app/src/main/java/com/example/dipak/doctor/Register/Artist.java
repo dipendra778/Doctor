@@ -9,8 +9,9 @@ public class Artist {
     private String hospital;
     private String price;
     private String availablity;
+    private String email;
 
-    public Artist(String name, String location, String price, String availablity, String speciality, int phone, String hospital) {
+    public Artist(String name, String location, String price, String availablity, String speciality, int phone, String hospital, String email) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -18,6 +19,7 @@ public class Artist {
         this.speciality = speciality;
         this.phone = phone;
         this.hospital = hospital;
+        this.email = email;
     }
 
     public String getName() {
@@ -74,5 +76,13 @@ public class Artist {
 
     public void setHospital(String hospital) {
         this.hospital = hospital;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
