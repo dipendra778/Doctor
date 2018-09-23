@@ -8,100 +8,78 @@
     android:background="@drawable/main1"
     android:fitsSystemWindows="true">
 
-<ScrollView
-    android:id="@+id/scrollView_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="closekeyboard"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#387089">
+            android:layout_height="match_parent"
+            android:onClick="closekeyboard"
+            android:orientation="vertical">
 
-        </android.support.v7.widget.Toolbar>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#387089">
 
+            </android.support.v7.widget.Toolbar>
 
-        <ViewFlipper
-            android:id="@+id/photo_fliper"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:onClick="closekeyboard" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <AutoCompleteTextView
-            android:layout_marginTop="@dimen/dp_60"
-            android:id="@+id/Specialist"
+                <ViewFlipper
+                    android:id="@+id/photo_fliper"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:onClick="closekeyboard"
+                    android:layout_margin="@dimen/dp_20"/>
 
-            android:drawableLeft="@drawable/expert"
-            android:drawablePadding="@dimen/dp_10"
-            android:paddingLeft="@dimen/dp_10"
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/photo_fliper"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:background="@drawable/shape_btn"
+                    android:text="@string/searchhospital"
+                    android:textColor="#FF6C2737"
+                    android:textSize="30sp" />
 
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/specialist"
-            android:textSize="@dimen/sp_20"
-            android:textColorHint="@color/hintEditText"
-            android:background="@drawable/shape_et"
+                <Button
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/clear"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/shape_btn"
+                    android:drawableLeft="@drawable/search"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:text= "@string/search_doctor"
+                    android:textColor="#FF6C2737"
+                    android:textSize="30sp" />
 
-            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="115dp"
+                    android:text="Copyright @ BURRD(2018)"
 
-        <AutoCompleteTextView
-            android:layout_marginTop="@dimen/dp_20"
-            android:id="@+id/location"
+                    android:textStyle="bold" />
+            </RelativeLayout>
 
-            android:drawableLeft="@drawable/newlocation"
-            android:drawablePadding="@dimen/dp_10"
-            android:paddingLeft="@dimen/dp_10"
+        </LinearLayout>
+    </ScrollView>
 
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/location"
-            android:textSize="@dimen/sp_20"
-            android:textColorHint="@color/hintEditText"
-            android:background="@drawable/shape_et"
-            />
-
-        <Button
-            android:layout_marginTop="@dimen/dp_60"
-            android:id="@+id/clear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/clear"
-            android:textSize="30sp"
-            android:textColor="#FF6C2737"
-            android:background="@drawable/shape_btn"/>
-
-        <Button
-            android:drawableLeft="@drawable/search"
-            android:paddingLeft="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_10"
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/search"
-            android:textColor="#FF6C2737"
-            android:textSize="30sp"
-            android:background="@drawable/shape_btn"
-            />
-
-
-    </LinearLayout>
-
-
-</ScrollView>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigationview"
         style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"

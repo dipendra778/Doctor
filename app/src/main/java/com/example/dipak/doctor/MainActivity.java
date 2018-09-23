@@ -23,13 +23,11 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.dipak.doctor.Emergency.EmergencyActivity;
-import com.example.dipak.doctor.Recycler.Product;
-import com.example.dipak.doctor.Recycler.RecyclerActivity;
+import com.example.dipak.doctor.Recycler.PostsListActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
@@ -39,17 +37,17 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    FirebaseDatabase mFirebaseDatabase;
+    //FirebaseFirestore db = FirebaseFirestore.getInstance();
+   // FirebaseDatabase mFirebaseDatabase;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
-    AutoCompleteTextView speciality, location;
-    private List<Product> productList;
+   // AutoCompleteTextView speciality, location;
+   // private List<Model> productList;
     ViewFlipper viewFlipper;
-    private ArrayList<String> listLocation;
-    private ArrayList<String> listSpeciality;
-    private String filterLocation, filterSpeciality;
+   // private ArrayList<String> listLocation;
+   // private ArrayList<String> listSpeciality;
+   // private String filterLocation, filterSpeciality;
 
 
     public static void start(Context context, String productList) {
@@ -66,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Imagae at top slideshow
         viewFlipper = findViewById(R.id.photo_fliper);
 
-        listLocation = new ArrayList<>();
-        listSpeciality = new ArrayList<>();
+     //   listLocation = new ArrayList<>();
+       // listSpeciality = new ArrayList<>();
         int images[] = {R.drawable.flipper1, R.drawable.flipper2, R.drawable.flipper3,
                 R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
@@ -79,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        speciality = findViewById(R.id.Specialist);
-        location = findViewById(R.id.location);
+        //speciality = findViewById(R.id.Specialist);
+        //location = findViewById(R.id.location);
 
         //   getSupportActionBar().setTitle("Doctor");
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -89,19 +87,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Button btnClear = findViewById(R.id.clear);
 
         setUpToolbar();
-        productList = new ArrayList<>();
-        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
+     //   productList = new ArrayList<>();
+     /*   final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot productSnapshot : dataSnapshot.getChildren()) {
-                        Product p = productSnapshot.getValue(Product.class);
-                        String location = p.getLocation();
-                        listLocation.add(location);
-                        String speciality = p.getSpeciality();
-                        listSpeciality.add(speciality);
+       //                 Model p = productSnapshot.getValue(Model.class);
+         //               String location = p.getLocation();
+           //             listLocation.add(location);
+             //           String speciality = p.getSpeciality();
+               //         listSpeciality.add(speciality);
                     }
                 }
 
@@ -111,10 +109,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
-        Gson gson = new Gson();
+        });*/
+       // Gson gson = new Gson();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this, android.R.layout.select_dialog_item, listLocation);
         location.setThreshold(1); //will start working from first character
         location.setAdapter(adapter);
@@ -122,8 +120,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 (this, android.R.layout.select_dialog_item, listSpeciality);
         speciality.setThreshold(1); //will start working from first character
         speciality.setAdapter(adapter1);
-
-        speciality.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+*/
+     /*   speciality.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.i("", "SELECTED speciality TEXT WAS------->" + listSpeciality.get(i));
@@ -138,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
+*/
 //        RecyclerActivity.start(this, gson.toJson(productList));
 
 
@@ -147,16 +145,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                speciality.setText("");
-                location.setText("");
+                Intent intent = new Intent(MainActivity.this, EmergencyActivity.class);
+                startActivity(intent);
             }
         });
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
-                RecyclerActivity.start(MainActivity.this, filterLocation,filterSpeciality);
+                Intent intent = new Intent(MainActivity.this, PostsListActivity.class);
                 startActivity(intent);
             }
         });
@@ -199,10 +196,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.home_id:
+            /*case R.id.home_id:
                 Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show();
                 newactivity();
-                break;
+                break; */
 
             case R.id.sendmail:
                 Toast.makeText(this, "Send Mail", Toast.LENGTH_SHORT).show();
@@ -274,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
             Toast.makeText(this, "About Us", Toast.LENGTH_SHORT);
         } else if (id == R.id.viewdetail) {
-            Intent intent = new Intent(this, RecyclerActivity.class);
+            Intent intent = new Intent(this, PostsListActivity.class);
             startActivity(intent);
             Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
         } else if (id == R.id.signin) {
@@ -290,6 +287,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, EmergencyActivity.class);
             startActivity(intent);
             Toast.makeText(this, "Emergency! ", Toast.LENGTH_SHORT);
+        }
+        else if(id==R.id.share)
+        {
+            Intent intent=new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            String shareBody="You can download our app";
+            String shareSub="Link Here";
+            intent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+            intent.putExtra(Intent.EXTRA_TEXT,shareBody);
+            startActivity(Intent.createChooser(intent,"Share Using"));
         }
 
 

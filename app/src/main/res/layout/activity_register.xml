@@ -2,13 +2,15 @@
 <ScrollView android:id="@+id/scrollView_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fffff0">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:onClick="closekeyboard"
     tools:context=".Register.RegisterActivity">
 
     <EditText
@@ -17,7 +19,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/Name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="#000"
+        android:padding="@dimen/dp_10"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
     <EditText
         android:id="@+id/edittext_location"
@@ -25,7 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docLocation"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="#000"
+        android:padding="@dimen/dp_10"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
     <EditText
         android:id="@+id/edittext_price"
@@ -33,7 +45,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docPrice"
-        android:inputType="text" />
+        android:inputType="text"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
     <Spinner
         android:id="@+id/spinner_spe"
@@ -41,7 +58,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:dropDownWidth="wrap_content"
-        android:entries="@array/speciality" />
+        android:entries="@array/speciality"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10" />
 
     <EditText
         android:id="@+id/edittext_aviablity"
@@ -49,7 +70,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docAvailablity"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
     <EditText
         android:id="@+id/edittext_phone"
@@ -57,7 +83,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docPhone"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
 
     <EditText
@@ -66,14 +97,36 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docHospital"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
     <EditText
         android:id="@+id/edittext_Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:hint="@string/docEmail"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
+    <EditText
+        android:id="@+id/edittext_Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/docSearch"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
 
 
 
@@ -82,7 +135,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="@string/btnInsert" />
+        android:hint="@string/btnInsert"
+        android:textColorHint="#000"
+        android:textSize="@dimen/dp_20"
+        android:background="@drawable/shape_btn"/>
     <Button
 
         android:id="@+id/email_sign_out_button"
@@ -91,6 +147,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/sign_out"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColorHint="#000"
+        android:textSize="@dimen/dp_20"
+        android:background="@drawable/shape_btn"
+        />
 </LinearLayout>
 </ScrollView>

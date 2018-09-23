@@ -6,24 +6,20 @@
 
     <ImageView
         android:id="@+id/img_View"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="78dp"
+        android:layout_margin="@dimen/dp_30"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/img_View"
         android:layout_centerHorizontal="true"
         android:text="TextView"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:layout_below="@id/img_View"/>
 
     <TextView
         android:id="@+id/job_tv"

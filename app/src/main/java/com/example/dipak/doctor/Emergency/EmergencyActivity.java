@@ -27,7 +27,7 @@ public class EmergencyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
 
-        getSupportActionBar().setTitle("Emergency");
+        getSupportActionBar().setTitle("Emergency Contact ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView listView = findViewById(R.id.listview);
@@ -37,7 +37,7 @@ public class EmergencyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(EmergencyActivity.this, "this item clicked" + position, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EmergencyActivity.this, "this item clicked" + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(EmergencyActivity.this, EdisplayActivity.class);
                 intent.putExtra("image_name", images[position]);
                 intent.putExtra("name", name[position]);

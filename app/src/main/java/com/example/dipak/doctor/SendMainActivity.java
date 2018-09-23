@@ -27,6 +27,8 @@ public class SendMainActivity extends AppCompatActivity {
         mEditTextSubject = findViewById(R.id.edit_text_subject);
         mEditTextMessage = findViewById(R.id.edit_text_message);
 
+        mEditTextTo.setText(getIntent().getStringExtra("email"));
+
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -49,6 +49,13 @@
     <string name="to">To</string>
     <string name="docEmail">Email</string>
     <string name="inform">An Online Android App</string>
+    <string name="searchhospital">Hospital Details</string>
+    <string name="docSearch">Name in Small Letter</string>
+    <string name="copyright_owner">Copyright@BURRD</string>
+    <string name="copyright">This Doctor Finder App is Owned By:             Bhabana Pandey,Upendra Joshi,Renuka Katuwal,Roshan Pujara,Dipendra Pant              Copyright @ BURRD(2018)</string>
+    <string name="search_doctor">Search Doctors</string>
+    <string name="inquery">Inquery</string>
+    <string name="subscribe">Subscribe</string>
 
     <array name="speciality">
         <item>ENT</item>
@@ -58,5 +65,15 @@
         <item>Gerneral Medicine</item>
         <item>Neuro</item>
         <item>Orthopedics</item>
+    </array>
+
+    <array name="location">
+        <item>Kailali</item>
+        <item>Dhangadhi</item>
+        <item>Kathmandu</item>
+        <item>Mahendranagar</item>
+        <item>Baitadi</item>
+        <item>Patan</item>
+        <item>Darchula</item>
     </array>
 </resources>

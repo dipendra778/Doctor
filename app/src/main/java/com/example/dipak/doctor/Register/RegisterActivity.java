@@ -1,8 +1,10 @@
 package com.example.dipak.doctor.Register;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,7 +25,7 @@ import com.example.dipak.doctor.Register.Artist;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "RegisterActivity";
-    private EditText name, location, price, aviablity, phone, hospital,email;
+    private EditText name, location, price, aviablity, phone, hospital,email,search;
     private Button insert;
     private Spinner speciality;
     FirebaseAuth mAuth;
@@ -101,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         phone.setText("");
         hospital.setText("");
        email.setText("");
+       search.setText("");
     }
 
     private void init() {
@@ -113,6 +116,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         phone = findViewById(R.id.edittext_phone);
         hospital = findViewById(R.id.edittext_Hospital);
         email = findViewById(R.id.edittext_Email);
+        search=findViewById(R.id.edittext_Search);
 
 
     }
@@ -125,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
-                Artist artist = new Artist(name.getText().toString().trim(), location.getText().toString().trim(), price.getText().toString().trim(), aviablity.getText().toString().trim(), speciality.getSelectedItem().toString().trim(), Integer.parseInt(phone.getText().toString().trim()), hospital.getText().toString().trim(),email.getText().toString().trim());
+                Artist artist = new Artist(name.getText().toString().trim(), location.getText().toString().trim(), price.getText().toString().trim(), aviablity.getText().toString().trim(), speciality.getSelectedItem().toString().trim(), phone.getText().toString().trim(), hospital.getText().toString().trim(),email.getText().toString().trim(),search.getText().toString().trim());
                 saveData(artist);
                 Toast.makeText(this, "Inserted Successfully", Toast.LENGTH_LONG).show();
                 clearboxes();
@@ -141,4 +145,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    //CLoses soft keyboard
+    public void closekeyboard(View view) {
+
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 }

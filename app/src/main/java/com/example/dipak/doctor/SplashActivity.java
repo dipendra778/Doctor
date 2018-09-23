@@ -9,14 +9,14 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dipak.doctor.Recycler.Product;
+import com.example.dipak.doctor.Recycler.Model;
 
 import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
 
     private final int SplashTime = 2000;
-    private List<Product> productList;
+   // private List<Model> productList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

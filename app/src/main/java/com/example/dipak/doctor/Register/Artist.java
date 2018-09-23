@@ -5,13 +5,15 @@ public class Artist {
     private String name;
     private String speciality;
     private String location;
-    private int phone;
+    //private int phone;
+    private String phone;
     private String hospital;
     private String price;
     private String availablity;
     private String email;
+    private String search;
 
-    public Artist(String name, String location, String price, String availablity, String speciality, int phone, String hospital, String email) {
+    public Artist(String name, String location, String price, String availablity, String speciality, String phone, String hospital, String email ,String search) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -20,6 +22,7 @@ public class Artist {
         this.phone = phone;
         this.hospital = hospital;
         this.email = email;
+        this.search=search;
     }
 
     public String getName() {
@@ -62,14 +65,30 @@ public class Artist {
         this.speciality = speciality;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
+
+    /* public int getPhone() {
+            return phone;
+        }
+
+        public void setPhone(int phone) {
+            this.phone = phone;
+        }
+    */
     public String getHospital() {
         return hospital;
     }

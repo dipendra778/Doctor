@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#fffff0">
 
     <ScrollView
         android:id="@+id/login_form"
@@ -14,27 +15,38 @@
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:onClick="closekeyboard">
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:textColorHint="#000"
+                android:background="#f0ffff"
+                android:padding="@dimen/dp_20"
+                android:layout_margin="@dimen/dp_20"
+                android:textSize="@dimen/dp_20"
+                android:onClick="closekeyboard"/>
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-
+                android:textColorHint="#000"
+                android:textSize="@dimen/dp_20"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                />
+                android:background="#f0ffff"
+                android:padding="@dimen/dp_20"
+                android:layout_margin="@dimen/dp_20"
+                android:onClick="closekeyboard"/>
 
             <Button
                 android:id="@+id/email_sign_in_button"
@@ -43,7 +55,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/sign_in"
-                android:textStyle="bold"/>
+                android:textColor="#000"
+                android:textSize="@dimen/dp_20"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/shape_btn"/>
 
         </LinearLayout>
     </ScrollView>

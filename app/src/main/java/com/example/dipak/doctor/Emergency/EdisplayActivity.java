@@ -2,8 +2,10 @@ package com.example.dipak.doctor.Emergency;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,5 +35,16 @@ public class EdisplayActivity extends AppCompatActivity {
             detaitext.setText(intent.getStringExtra("detail"));
             phonetext.setText(intent.getStringExtra("phone"));
         }
+
+        //make a phone call when clicked on textview
+        phonetext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phonevalue = phonetext.getText().toString();
+                Intent callintent = new Intent(Intent.ACTION_DIAL);
+                callintent.setData(Uri.parse("tel:"+phonevalue));
+                startActivity(callintent);
+            }
+        });
     }
 }
