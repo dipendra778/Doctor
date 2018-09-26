@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.dipak.doctor"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -25,9 +25,14 @@ dependencies {
 //firebase
     implementation 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //circular button
+    implementation 'ir.sohreco.circularpulsingbutton:circular-pulsing-button:1.0.0'
+
     //ui
     implementation 'com.firebaseui:firebase-ui-database:0.4.0'
     //recycler and cardview

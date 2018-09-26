@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Doctor</string>
+    <string name="app_name">Doctor Finder</string>
     <string name="name">Doctor Finder</string>
     <string name="speciality"> Speciality</string>
     <string name="location"> Location</string>
@@ -52,10 +52,12 @@
     <string name="searchhospital">Hospital Details</string>
     <string name="docSearch">Name in Small Letter</string>
     <string name="copyright_owner">Copyright@BURRD</string>
-    <string name="copyright">This Doctor Finder App is Owned By:             Bhabana Pandey,Upendra Joshi,Renuka Katuwal,Roshan Pujara,Dipendra Pant              Copyright @ BURRD(2018)</string>
+    <string name="copyright">This Doctor Finder App is Owned By:             Bhabana Pandey,Upendra Joshi,Renuka Katuwal,Roshan Pujara,Dipendra Pant              Copyright @ BURRD Group NAST(2018)</string>
     <string name="search_doctor">Search Doctors</string>
     <string name="inquery">Inquery</string>
     <string name="subscribe">Subscribe</string>
+    <string name="search_profesional">Search Professional</string>
+    <string name="docLoc">Location In Small Letter</string>
 
     <array name="speciality">
         <item>ENT</item>
@@ -66,14 +68,12 @@
         <item>Neuro</item>
         <item>Orthopedics</item>
     </array>
-
     <array name="location">
-        <item>Kailali</item>
         <item>Dhangadhi</item>
-        <item>Kathmandu</item>
         <item>Mahendranagar</item>
-        <item>Baitadi</item>
-        <item>Patan</item>
-        <item>Darchula</item>
+        <item>Kathmandu</item>
+        <item>Pokhara</item>
     </array>
+
+
 </resources>

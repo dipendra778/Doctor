@@ -10,7 +10,8 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="closekeyboard">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -29,8 +30,7 @@
                 android:background="#f0ffff"
                 android:padding="@dimen/dp_20"
                 android:layout_margin="@dimen/dp_20"
-                android:textSize="@dimen/dp_20"
-                android:onClick="closekeyboard"/>
+                android:textSize="@dimen/dp_20" />
 
             <EditText
                 android:id="@+id/password"
@@ -45,8 +45,7 @@
                 android:maxLines="1"
                 android:background="#f0ffff"
                 android:padding="@dimen/dp_20"
-                android:layout_margin="@dimen/dp_20"
-                android:onClick="closekeyboard"/>
+                android:layout_margin="@dimen/dp_20" />
 
             <Button
                 android:id="@+id/email_sign_in_button"

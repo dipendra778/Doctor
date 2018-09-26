@@ -21,7 +21,7 @@ public class EdisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edisplay);
 
-        getSupportActionBar().setTitle("Emergency");
+        getSupportActionBar().setTitle("Emergency Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageView=findViewById(R.id.imageView);
         nametext=findViewById(R.id.name);

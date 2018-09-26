@@ -15,7 +15,7 @@ import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SplashTime = 2000;
+    private final int SplashTime = 5000;
    // private List<Model> productList;
 
     @Override

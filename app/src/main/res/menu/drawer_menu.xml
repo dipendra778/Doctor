@@ -13,11 +13,7 @@
         android:icon="@drawable/signin"
         >
     </item>
-    <item android:id="@+id/viewdetail"
-        android:title="@string/viewdetail"
-        android:icon="@drawable/detail"
-        >
-    </item>
+
     <item android:id="@+id/signin"
         android:title="@string/sign"
         android:icon="@drawable/ic_settings_black_24dp"

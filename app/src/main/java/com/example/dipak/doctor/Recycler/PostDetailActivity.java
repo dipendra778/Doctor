@@ -28,7 +28,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
     TextView mTitleTv, mDetailTv, mspTv, mHospitalTv, mPriceTv, mEmailTv, mPhoneTv,mAvailTv; //,mPhoneTv,mHospitalTv,mEmailTv,mPriceTv;
     ImageView mImageTv;
-    Button mSendMail_Btn,mInquery_Btn;
+    Button mSendMail_Btn;//mInquery_Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,30 @@ public class PostDetailActivity extends AppCompatActivity {
         actionBar.setTitle("Doctor Details");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+
+        /*  <Spinner
+        android:id="@+id/spinner_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/location"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10" />
+    <Button
+        android:drawableLeft="@drawable/inquery"
+        android:paddingLeft="@dimen/dp_10"
+        android:id="@+id/InqueryTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/subscribe"
+        android:textColor="#FF6C2737"
+        android:textSize="30sp"
+        android:background="@drawable/shape_btn"
+        />*/
 
         mTitleTv = findViewById(R.id.TitleTv);
         mDetailTv = findViewById(R.id.DescriptionTv);
@@ -51,7 +75,7 @@ public class PostDetailActivity extends AppCompatActivity {
         mAvailTv=findViewById(R.id.AvailTv);
 
         mSendMail_Btn = findViewById(R.id.MailTv);
-        mInquery_Btn=findViewById(R.id.InqueryTv);
+       // mInquery_Btn=findViewById(R.id.InqueryTv);
         //send mail to doctor
 
         mSendMail_Btn.setOnClickListener(new View.OnClickListener() {

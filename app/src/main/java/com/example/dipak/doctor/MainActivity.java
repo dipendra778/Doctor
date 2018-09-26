@@ -1,7 +1,10 @@
 package com.example.dipak.doctor;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -19,35 +22,40 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.example.dipak.doctor.Emergency.EmergencyActivity;
+import com.example.dipak.doctor.Professional.Constants;
+import com.example.dipak.doctor.Professional.PostDetailActivity_p;
 import com.example.dipak.doctor.Recycler.PostsListActivity;
+import com.example.dipak.doctor.Professional.PostsListActivity_p;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ir.sohreco.circularpulsingbutton.CircularPulsingButton;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    //FirebaseFirestore db = FirebaseFirestore.getInstance();
-   // FirebaseDatabase mFirebaseDatabase;
+
+    Button mInquery_Btn;
+    Spinner spinnerLocation;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
-   // AutoCompleteTextView speciality, location;
-   // private List<Model> productList;
+
     ViewFlipper viewFlipper;
-   // private ArrayList<String> listLocation;
-   // private ArrayList<String> listSpeciality;
-   // private String filterLocation, filterSpeciality;
+
 
 
     public static void start(Context context, String productList) {
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mainIntent.putExtra("details", productList);
         context.startActivity(mainIntent);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
      //   listLocation = new ArrayList<>();
        // listSpeciality = new ArrayList<>();
-        int images[] = {R.drawable.flipper1, R.drawable.flipper2, R.drawable.flipper3,
+        int images[] = {R.drawable.flipper1, R.drawable.doctor1, R.drawable.doctor2,
                 R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
         for (int image : images) {
@@ -77,78 +86,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        //speciality = findViewById(R.id.Specialist);
-        //location = findViewById(R.id.location);
 
-        //   getSupportActionBar().setTitle("Doctor");
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button btnSearch = findViewById(R.id.search);
-        Button btnClear = findViewById(R.id.clear);
+        Button btnSearch =  findViewById(R.id.search);
+
+        Button btnProfessional=findViewById(R.id.search_professional);
 
         setUpToolbar();
-     //   productList = new ArrayList<>();
-     /*   final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("details");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                if (dataSnapshot.exists()) {
-                    for (DataSnapshot productSnapshot : dataSnapshot.getChildren()) {
-       //                 Model p = productSnapshot.getValue(Model.class);
-         //               String location = p.getLocation();
-           //             listLocation.add(location);
-             //           String speciality = p.getSpeciality();
-               //         listSpeciality.add(speciality);
-                    }
-                }
+        spinnerLocation=findViewById(R.id.spinner_location);
+      // spinnerLocation.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        mInquery_Btn=findViewById(R.id.InqueryTv);
 
-            }
+        createNotificationChannel();
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
-       // Gson gson = new Gson();
-
-       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (this, android.R.layout.select_dialog_item, listLocation);
-        location.setThreshold(1); //will start working from first character
-        location.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>
-                (this, android.R.layout.select_dialog_item, listSpeciality);
-        speciality.setThreshold(1); //will start working from first character
-        speciality.setAdapter(adapter1);
-*/
-     /*   speciality.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.i("", "SELECTED speciality TEXT WAS------->" + listSpeciality.get(i));
-                filterSpeciality = listSpeciality.get(i);
-            }
-        });
-        location.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                filterLocation = listLocation.get(i);
-                Log.i("", "SELECTED location TEXT WAS------->" + listLocation.get(i));
-            }
-        });
-
-*/
-//        RecyclerActivity.start(this, gson.toJson(productList));
-
-
-        //Button Search and Clear Work
-
-        btnClear.setOnClickListener(new View.OnClickListener() {
+        mInquery_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, EmergencyActivity.class);
-                startActivity(intent);
+
+                String location=spinnerLocation.getSelectedItem().toString();
+                FirebaseMessaging.getInstance().subscribeToTopic(location);
+                Toast.makeText(getApplicationContext(),"Subscribed",Toast.LENGTH_LONG).show();
             }
         });
+
+
+
+
+
+
+
+          /* <Button
+                    android:id="@+id/clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/photo_fliper"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:background="@drawable/shape_btn"
+                    android:text="@string/searchhospital"
+                    android:textColor="#FF6C2737"
+                    android:textSize="30sp" />
+         //
+         */
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +139,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        btnProfessional.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inten=new Intent(MainActivity.this,PostsListActivity_p.class);
+                startActivity(inten);
+            }
+        });
+
+
+    }
+
+ /*   public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+        Toast.makeText(parent.getContext(),
+                "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
+                Toast.LENGTH_SHORT).show();
+    }
+*/
+
+
+    private void createNotificationChannel()
+    {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(Constants.CHANNEL_ID, Constants.CHANNEL_NAME, importance);
+            mChannel.setDescription(Constants.CHANNEL_DESCRIPTION);
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            mNotificationManager.createNotificationChannel(mChannel);
+        }
     }
 
     public void flipperImages(int images) {
@@ -203,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.sendmail:
                 Toast.makeText(this, "Send Mail", Toast.LENGTH_SHORT).show();
-                viewactivity();
+                mailactivity();
                 break;
 
             case R.id.game_id:
@@ -237,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-    public void viewactivity() {
+    public void mailactivity() {
         Intent intent = new Intent(MainActivity.this, SendMainActivity.class);
         startActivity(intent);
     }
@@ -253,7 +267,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-
+/*else if (id == R.id.viewdetail) {
+            Intent intent = new Intent(this, PostsListActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
+        } */
     //Navigation bar item selection and intent
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -270,10 +288,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
             Toast.makeText(this, "About Us", Toast.LENGTH_SHORT);
-        } else if (id == R.id.viewdetail) {
-            Intent intent = new Intent(this, PostsListActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
         } else if (id == R.id.signin) {
             Intent intent = new Intent(this, SigninActivity.class);
             startActivity(intent);
