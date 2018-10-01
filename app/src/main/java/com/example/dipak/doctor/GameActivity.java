@@ -52,7 +52,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     public void onClick(View v) {
         if (!((Button) v).getText().toString().equals("")) {
             return;
@@ -139,6 +138,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         resetBoard();
     }
+
     private void updatePointsText() {
         textViewPlayer1.setText("Dipak : " + player1Points);
         textViewPlayer2.setText("Roshan : " + player2Points);
@@ -155,12 +155,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         player1Turn = true;
     }
 
-    private void reset()
-    {
-     player1Points=0;
-     player2Points=0;
-     updatePointsText();
-     resetBoard();
+    private void reset() {
+        player1Points = 0;
+        player2Points = 0;
+        updatePointsText();
+        resetBoard();
     }
 
 }

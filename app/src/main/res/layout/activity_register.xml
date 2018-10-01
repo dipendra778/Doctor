@@ -114,6 +114,19 @@
         android:background="#f0ffff"
         android:layout_margin="@dimen/dp_10"
         android:onClick="closekeyboard"/>
+
+    <EditText
+        android:id="@+id/edittext_Qualification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/docQual"
+        android:padding="@dimen/dp_10"
+        android:textColorHint="#000"
+        android:background="#f0ffff"
+        android:layout_margin="@dimen/dp_10"
+        android:onClick="closekeyboard"/>
+
     <EditText
         android:id="@+id/edittext_Search"
         android:layout_width="match_parent"
@@ -127,8 +140,6 @@
         android:layout_margin="@dimen/dp_10"
         android:onClick="closekeyboard"/>
 
-
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -138,8 +149,9 @@
         android:textColorHint="#000"
         android:textSize="@dimen/dp_20"
         android:background="@drawable/shape_btn"/>
-    <Button
 
+
+    <Button
         android:id="@+id/email_sign_out_button"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"

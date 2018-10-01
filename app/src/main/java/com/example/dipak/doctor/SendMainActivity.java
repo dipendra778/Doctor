@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor;
 
 
@@ -53,6 +54,7 @@ public class SendMainActivity extends AppCompatActivity {
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
+
     //CLoses soft keyboard
     public void closekeyboard(View view) {
 

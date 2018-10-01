@@ -12,8 +12,12 @@ public class Artist {
     private String availablity;
     private String email;
     private String search;
+    private String qualification;
 
-    public Artist(String name, String location, String price, String availablity, String speciality, String phone, String hospital, String email ,String search) {
+    public Artist(String name, String location, String price,
+                  String availablity, String speciality,
+                  String phone, String hospital,
+                  String email ,String search,String qualification) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -23,6 +27,7 @@ public class Artist {
         this.hospital = hospital;
         this.email = email;
         this.search=search;
+        this.qualification=qualification;
     }
 
     public String getName() {
@@ -103,5 +108,13 @@ public class Artist {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 }

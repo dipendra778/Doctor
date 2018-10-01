@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor.Recycler;
 
 import android.content.Context;
@@ -118,7 +119,11 @@ public class PostsListActivity extends AppCompatActivity {
                 ) {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
-                        viewHolder.setDetails(getApplicationContext(), model.getName(), model.getSpeciality(), model.getLocation(), model.getImage(), model.getHospital(), model.getPrice(), model.getEmail(), model.getPhone(),model.getAvailablity());//, model.getPhone(), model.getHospital(), model.getEmail(), model.getPrice()
+                        viewHolder.setDetails(getApplicationContext(), model.getName(), model.getSpeciality(),
+                                model.getLocation(), model.getImage(),
+                                model.getHospital(), model.getPrice(),
+                                model.getEmail(), model.getPhone(),
+                                model.getAvailablity(),model.getQualification());//, model.getPhone(), model.getHospital(), model.getEmail(), model.getPrice()
                     }
 
                     @Override
@@ -138,20 +143,13 @@ public class PostsListActivity extends AppCompatActivity {
                                 TextView mEmailTv = view.findViewById(R.id.rEmailTv);
                                 TextView mPhoneTv = view.findViewById(R.id.rPhoneTv);
                                 TextView mAvailTv=view.findViewById(R.id.rAvailTv);
-                                // TextView mPhoneTv = view.findViewById(R.id.rPhoneTv);
-                                //TextView mHospitalTv = view.findViewById(R.id.rHospitalTv);
-                                // TextView mEmailTv = view.findViewById(R.id.rEmailTv);
-                                //TextView mPriceTv = view.findViewById(R.id.rPriceTv);
+                                TextView mQualTv=view.findViewById(R.id.rQualificationTv);
                                 // to get data from views
 
                                 String mTitle = mTitleTv.getText().toString();
                                 String msp = mspTv.getText().toString();
                                 String mDesc = mDescTv.getText().toString();
-                              /*  String mPhone = mPhoneTv.getText().toString();
-                                String mHospital = mHospitalTv.getText().toString();
-                                String mEmail = mEmailTv.getText().toString();
-                                String mPrice = mPriceTv.getText().toString();
-                                */
+
                                 Drawable mDrawable = mImageView.getDrawable();
                                 Bitmap mBitmap = ((BitmapDrawable) mDrawable).getBitmap();
                                 String mHospital = mHospitalTv.getText().toString();
@@ -159,6 +157,7 @@ public class PostsListActivity extends AppCompatActivity {
                                 String mEmail = mEmailTv.getText().toString();
                                 String mPhone = mPhoneTv.getText().toString();
                                 String mAvail =mAvailTv.getText().toString();
+                                String mQual=mQualTv.getText().toString();
                                 //pass this data to new activity
                                 Intent intent = new Intent(view.getContext(), PostDetailActivity.class);
                                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -173,10 +172,7 @@ public class PostsListActivity extends AppCompatActivity {
                                 intent.putExtra("email", mEmail);
                                 intent.putExtra("phone", mPhone);
                                 intent.putExtra("availablity",mAvail);
-                                //  intent.putExtra("phone", mPhone);
-                                //intent.putExtra("hospital", mHospital);
-                                //intent.putExtra("email", mEmail);
-                                //intent.putExtra("price", mPrice);
+                                intent.putExtra("qualification",mQual);
                                 startActivity(intent);
                             }
 
@@ -209,7 +205,11 @@ public class PostsListActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
 
-                        viewHolder.setDetails(getApplicationContext(), model.getName(), model.getSpeciality(), model.getLocation(), model.getImage(), model.getHospital(), model.getPrice(), model.getEmail(), model.getPhone(),model.getAvailablity());//, model.getPhone(), model.getHospital(), model.getEmail(), model.getPrice());
+                        viewHolder.setDetails(getApplicationContext(), model.getName(),
+                                model.getSpeciality(), model.getLocation(),
+                                model.getImage(), model.getHospital(),
+                                model.getPrice(), model.getEmail(),
+                                model.getPhone(),model.getAvailablity(),model.getQualification());//, model.getPhone(), model.getHospital(), model.getEmail(), model.getPrice());
                     }
 
                     @Override
@@ -229,20 +229,13 @@ public class PostsListActivity extends AppCompatActivity {
                                 TextView mEmailTv = view.findViewById(R.id.rEmailTv);
                                 TextView mPhoneTv = view.findViewById(R.id.rPhoneTv);
                                 TextView mAvailTv=view.findViewById(R.id.rAvailTv);
-                                //TextView mPhoneTv = view.findViewById(R.id.rPhoneTv);
-                                // TextView mHospitalTv = view.findViewById(R.id.rHospitalTv);
-                                // TextView mEmailTv = view.findViewById(R.id.rEmailTv);
-                                // TextView mPriceTv = view.findViewById(R.id.rPriceTv);
+                               TextView mQualTv=view.findViewById(R.id.rQualificationTv);
                                 // to get data from views
 
                                 String mTitle = mTitleTv.getText().toString();
                                 String msp = mspTv.getText().toString();
                                 String mDesc = mDescTv.getText().toString();
 
-                                //String mPhone = mPhoneTv.getText().toString();
-                                // String mHospital = mHospitalTv.getText().toString();
-                                // String mEmail = mEmailTv.getText().toString();
-                                // String mPrice = mPriceTv.getText().toString();
                                 Drawable mDrawable = mImageView.getDrawable();
                                 Bitmap mBitmap = ((BitmapDrawable) mDrawable).getBitmap();
 
@@ -251,6 +244,7 @@ public class PostsListActivity extends AppCompatActivity {
                                 String mEmail = mEmailTv.getText().toString();
                                 String mPhone = mPhoneTv.getText().toString();
                                 String mAvail =mAvailTv.getText().toString();
+                                String mQual=mQualTv.getText().toString();
 
                                 //pass this data to new activity
                                 Intent intent = new Intent(view.getContext(), PostDetailActivity.class);
@@ -266,10 +260,7 @@ public class PostsListActivity extends AppCompatActivity {
                                 intent.putExtra("email", mEmail);
                                 intent.putExtra("phone", mPhone);
                                 intent.putExtra("availablity",mAvail);
-                                // intent.putExtra("phone", mPhone);
-                                // intent.putExtra("hospital", mHospital);
-                                //intent.putExtra("email", mEmail);
-                                //intent.putExtra("price", mPrice);
+                                intent.putExtra("qualification",mQual);
                                 startActivity(intent);
                             }
 
@@ -311,16 +302,7 @@ public class PostsListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-       /* int id = item.getItemId();
-        handle action bar click here
-        if (id == R.id.action_setting) {
-            //Baki part
-            <item
-            android:id="@+id/action_setting"
-            android:title="Setting"
-                    />
-            return true;
-        } */
+
         return super.onOptionsItemSelected(item);
     }
 }

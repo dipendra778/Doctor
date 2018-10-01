@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor;
 
 import android.support.v7.app.AppCompatActivity;
@@ -63,7 +64,6 @@ public class NewsActivity extends AppCompatActivity {
         });
         imageView5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
 
                 Intent browserIntent = new Intent(
                         Intent.ACTION_VIEW,

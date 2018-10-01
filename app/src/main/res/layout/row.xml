@@ -38,6 +38,17 @@
             android:textAlignment="center"
             >
         </TextView>
+        <TextView
+            android:id="@+id/rQualificationTv"
+            android:text="Qualification"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            >
+        </TextView>
 
         <ImageView
             android:id="@+id/rImageView"

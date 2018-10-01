@@ -45,12 +45,24 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="140" />
+                                                <entry key="trimmed" value="true" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundImage">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="60" />
+                                                <entry key="scalingPercent" value="61" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -62,9 +74,9 @@
                                     <map>
                                       <entry key="backgroundImage" value="C:\Users\Dipak\Desktop\DoctorBackground.png" />
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\Dipak\Desktop\DoctorFInder.png" />
+                                      <entry key="foregroundImage" value="C:\Users\Dipak\Desktop\doctoricon.gif" />
                                       <entry key="foregroundLayerName" value="doctor_foreground" />
-                                      <entry key="outputName" value="doctor_background" />
+                                      <entry key="outputName" value="doctor_icon" />
                                     </map>
                                   </option>
                                 </PersistentState>

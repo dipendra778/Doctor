@@ -3,7 +3,7 @@ package com.example.dipak.doctor.Recycler;
 public class Model {
 
     String name, speciality, location, image,hospital;
-    String price,email,phone,availablity;     //, phone, hospital, email, price;
+    String price,email,phone,availablity,qualification;     //, phone, hospital, email, price;
 
     public Model()
 
@@ -80,5 +80,13 @@ public class Model {
 
     public void setAvailablity(String availablity) {
         this.availablity = availablity;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 }

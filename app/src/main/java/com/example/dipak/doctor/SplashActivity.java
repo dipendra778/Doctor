@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor;
 
 
@@ -16,7 +17,7 @@ import java.util.List;
 public class SplashActivity extends AppCompatActivity {
 
     private final int SplashTime = 5000;
-   // private List<Model> productList;
+    // private List<Model> productList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ImageView imageView = findViewById(R.id.imageView);
         TextView textView1 = findViewById(R.id.textView1);
-        TextView textView2=findViewById(R.id.textView2);
+        TextView textView2 = findViewById(R.id.textView2);
 
         new Handler().postDelayed(new Runnable() {
             @Override

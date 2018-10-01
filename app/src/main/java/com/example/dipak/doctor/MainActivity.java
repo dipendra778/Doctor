@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor;
 
 import android.app.NotificationChannel;
@@ -48,14 +49,15 @@ import ir.sohreco.circularpulsingbutton.CircularPulsingButton;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button mInquery_Btn;
-    Spinner spinnerLocation;
+    //Button mInquery_Btn;
+    //Spinner spinnerLocation;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     ViewFlipper viewFlipper;
 
+    //android:background="@drawable/main1"
 
 
     public static void start(Context context, String productList) {
@@ -73,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Imagae at top slideshow
         viewFlipper = findViewById(R.id.photo_fliper);
 
-     //   listLocation = new ArrayList<>();
-       // listSpeciality = new ArrayList<>();
+        //   listLocation = new ArrayList<>();
+        // listSpeciality = new ArrayList<>();
         int images[] = {R.drawable.flipper1, R.drawable.doctor1, R.drawable.doctor2,
                 R.drawable.flipper4, R.drawable.flipper5, R.drawable.flipper6};
 
@@ -86,21 +88,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        Button btnSearch = findViewById(R.id.search);
 
-
-        Button btnSearch =  findViewById(R.id.search);
-
-        Button btnProfessional=findViewById(R.id.search_professional);
+        Button btnProfessional = findViewById(R.id.search_professional);
 
         setUpToolbar();
 
-        spinnerLocation=findViewById(R.id.spinner_location);
-      // spinnerLocation.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-        mInquery_Btn=findViewById(R.id.InqueryTv);
+        //  spinnerLocation=findViewById(R.id.spinner_location);
+        // spinnerLocation.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        //mInquery_Btn=findViewById(R.id.InqueryTv);
 
-        createNotificationChannel();
+        //       createNotificationChannel();
 
-        mInquery_Btn.setOnClickListener(new View.OnClickListener() {
+       /* mInquery_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(getApplicationContext(),"Subscribed",Toast.LENGTH_LONG).show();
             }
         });
-
+*/
 
 
 
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnProfessional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten=new Intent(MainActivity.this,PostsListActivity_p.class);
+                Intent inten = new Intent(MainActivity.this, PostsListActivity_p.class);
                 startActivity(inten);
             }
         });
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 */
 
-
+/*
     private void createNotificationChannel()
     {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             mNotificationManager.createNotificationChannel(mChannel);
         }
-    }
+    }  */
 
     public void flipperImages(int images) {
         ImageView imageView = new ImageView(this);
@@ -267,11 +267,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-/*else if (id == R.id.viewdetail) {
-            Intent intent = new Intent(this, PostsListActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
-        } */
+
+    /*else if (id == R.id.viewdetail) {
+                Intent intent = new Intent(this, PostsListActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "Details", Toast.LENGTH_SHORT);
+            } */
     //Navigation bar item selection and intent
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -296,21 +297,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, NewsActivity.class);
             startActivity(intent);
             Toast.makeText(this, "News! ", Toast.LENGTH_SHORT);
-        }
-        else if (id == R.id.emergency) {
+        } else if (id == R.id.emergency) {
             Intent intent = new Intent(this, EmergencyActivity.class);
             startActivity(intent);
             Toast.makeText(this, "Emergency! ", Toast.LENGTH_SHORT);
-        }
-        else if(id==R.id.share)
-        {
-            Intent intent=new Intent(Intent.ACTION_SEND);
+        } else if (id == R.id.share) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
-            String shareBody="You can download our app";
-            String shareSub="Link Here";
-            intent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
-            intent.putExtra(Intent.EXTRA_TEXT,shareBody);
-            startActivity(Intent.createChooser(intent,"Share Using"));
+            String shareBody = "You can download our app";
+            String shareSub = "Link Here";
+            intent.putExtra(Intent.EXTRA_SUBJECT, shareSub);
+            intent.putExtra(Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(intent, "Share Using"));
         }
 
 

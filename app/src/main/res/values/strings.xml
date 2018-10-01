@@ -58,15 +58,24 @@
     <string name="subscribe">Subscribe</string>
     <string name="search_profesional">Search Professional</string>
     <string name="docLoc">Location In Small Letter</string>
+    <string name="docQual">Qualification</string>
+    <string name="btnChoose">Choose</string>
+    <string name="btnUpload">Upload</string>
+    <string name="sign_i">Admin Login</string>
 
     <array name="speciality">
         <item>ENT</item>
-        <item>Dermatology</item>
+        <item>Dermatologist</item>
         <item>Gynoclosist</item>
         <item>Pedratics</item>
         <item>Gerneral Medicine</item>
-        <item>Neuro</item>
+        <item>Neuro Surgeon</item>
         <item>Orthopedics</item>
+        <item>Endocrinologist</item>
+        <item>Neurologist</item>
+        <item>Surgeon</item>
+        <item>Cardiology</item>
+
     </array>
     <array name="location">
         <item>Dhangadhi</item>

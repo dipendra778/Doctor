@@ -40,7 +40,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         });
 
     }
-        public void setDetails(Context ctx, String name, String speciality, String location, String image, String hospital, String price,String email,String phone,String availablity)// ,String phone , String hospital, String email, String price
+        public void setDetails(Context ctx, String name, String speciality, String location,
+                               String image, String hospital, String price,
+                               String email,String phone,String availablity,String qualification)// ,String phone , String hospital, String email, String price
         {
 
             TextView mTitleTv=mView.findViewById(R.id.rTitleTv);
@@ -52,13 +54,10 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             TextView mEmailTv=mView.findViewById(R.id.rEmailTv);
             TextView mPhoneTv=mView.findViewById(R.id.rPhoneTv);
             TextView mAvailTv=mView.findViewById(R.id.rAvailTv);
+            TextView mQualTv=mView.findViewById(R.id.rQualificationTv);
 
 
-          /*  TextView  mPhoneTv=mView.findViewById(R.id.PhoneTv);
-            TextView  mHospitalTv=mView.findViewById(R.id.HospitalTv);
-            TextView   mEmailTv=mView.findViewById(R.id.EmailTv);
-            TextView mPriceTv=mView.findViewById(R.id.PriceTv);
-*/
+
 
             //set data
             mTitleTv.setText(name);
@@ -69,10 +68,8 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             mEmailTv.setText(email);
             mPhoneTv.setText(phone);
             mAvailTv.setText(availablity);
-          //  mPhoneTv.setText(phone);
- //           mHospitalTv.setText(hospital);
-   //         mEmailTv.setText(email);
-     //       mPriceTv.setText(price);
+            mQualTv.setText(qualification);
+
             Picasso.get().load(image).into(mImageTv);
         }
         private ViewHolder.ClickListener mClickListener;

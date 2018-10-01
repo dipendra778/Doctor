@@ -1,4 +1,6 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor;
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -63,6 +65,7 @@ public class SigninActivity extends AppCompatActivity {
                 String pass = mPassword.getText().toString();
                 if (!email.equals("") && !pass.equals("")) {
                     mAuth.signInWithEmailAndPassword(email, pass);
+                    toastMessage("Sign In Clicked!");
                 } else {
                     toastMessage("You didn't fill in all the fields.");
                 }
@@ -87,6 +90,7 @@ public class SigninActivity extends AppCompatActivity {
     private void toastMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
     //CLoses soft keyboard
     public void closekeyboard(View view) {
 

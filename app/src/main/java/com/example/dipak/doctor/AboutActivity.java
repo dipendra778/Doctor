@@ -1,3 +1,5 @@
+/*Created By @ Dipendra Pant(2018)*/
+
 package com.example.dipak.doctor;
 
 import android.support.v7.app.AppCompatActivity;
@@ -8,15 +10,16 @@ import android.widget.ViewFlipper;
 public class AboutActivity extends AppCompatActivity {
 
     ViewFlipper viewFlipper;
-  // ImageView imageView;
+
+    // ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-      getSupportActionBar().setTitle("About");
-      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("About");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-      //flipper images
+        //flipper images
         viewFlipper = findViewById(R.id.photo_fliper);
 
         int images_a[] = {R.drawable.dipendra, R.drawable.roshan, R.drawable.renuka,

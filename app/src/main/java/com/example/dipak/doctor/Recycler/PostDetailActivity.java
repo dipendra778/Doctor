@@ -1,3 +1,4 @@
+/*Created By @ Dipendra Pant(2018)*/
 package com.example.dipak.doctor.Recycler;
 
 import android.Manifest;
@@ -26,7 +27,7 @@ import com.example.dipak.doctor.SendMainActivity;
 
 public class PostDetailActivity extends AppCompatActivity {
 
-    TextView mTitleTv, mDetailTv, mspTv, mHospitalTv, mPriceTv, mEmailTv, mPhoneTv,mAvailTv; //,mPhoneTv,mHospitalTv,mEmailTv,mPriceTv;
+    TextView mTitleTv, mDetailTv, mspTv, mHospitalTv, mPriceTv, mEmailTv, mPhoneTv,mAvailTv,mQualTv; //,mPhoneTv,mHospitalTv,mEmailTv,mPriceTv;
     ImageView mImageTv;
     Button mSendMail_Btn;//mInquery_Btn;
 
@@ -73,6 +74,7 @@ public class PostDetailActivity extends AppCompatActivity {
         mEmailTv = findViewById(R.id.EmailTv);
         mPhoneTv = findViewById(R.id.PhoneTv);
         mAvailTv=findViewById(R.id.AvailTv);
+        mQualTv=findViewById(R.id.QualificationTv);
 
         mSendMail_Btn = findViewById(R.id.MailTv);
        // mInquery_Btn=findViewById(R.id.InqueryTv);
@@ -116,6 +118,7 @@ public class PostDetailActivity extends AppCompatActivity {
         String email=getIntent().getStringExtra("email");
         String phone=getIntent().getStringExtra("phone");
         String avail=getIntent().getStringExtra("availablity");
+        String qual=getIntent().getStringExtra("qualification");
         Bitmap bmp= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
 
         // set data to views
@@ -127,6 +130,7 @@ public class PostDetailActivity extends AppCompatActivity {
         mEmailTv.setText(email);
         mPhoneTv.setText(phone);
         mAvailTv.setText(avail);
+        mQualTv.setText(qual);
 
         mImageTv.setImageBitmap(bmp);
 

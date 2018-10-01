@@ -41,7 +41,7 @@
 
                 <Button
                     android:id="@+id/search"
-                    android:layout_width="280dp"
+                    android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_below="@id/photo_fliper"
                     android:layout_centerHorizontal="true"
@@ -55,7 +55,7 @@
 
                 <Button
                     android:id="@+id/search_professional"
-                    android:layout_width="280dp"
+                    android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_below="@id/search"
                   android:layout_centerHorizontal="true"
@@ -66,37 +66,13 @@
                     android:text= "@string/search_profesional"
                     android:textColor="#FF6C2737"
                     android:textSize="30sp" />
-                <Spinner
-                    android:id="@+id/spinner_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:dropDownWidth="wrap_content"
-                    android:entries="@array/location"
-                    android:padding="@dimen/dp_10"
-                    android:textColorHint="#000"
-                    android:layout_below="@id/search_professional"
-                    android:background="#f0ffff"
-                    android:layout_margin="@dimen/dp_20" />
-                <Button
 
-                    android:paddingLeft="@dimen/dp_10"
-                    android:id="@+id/InqueryTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="@string/subscribe"
-                    android:textColor="#FF6C2737"
-                    android:layout_below="@id/spinner_location"
-                    android:textSize="30sp"
-                    android:background="@drawable/shape_btn"
-                    />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/InqueryTv"
+                    android:layout_below="@id/search_professional"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="115dp"
                     android:text="Copyright @ BURRD Group NAST(2018)"

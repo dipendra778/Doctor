@@ -15,7 +15,7 @@
     </item>
 
     <item android:id="@+id/signin"
-        android:title="@string/sign"
+        android:title="@string/sign_i"
         android:icon="@drawable/ic_settings_black_24dp"
         >
     </item>
